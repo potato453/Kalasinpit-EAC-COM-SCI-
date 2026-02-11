@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,92 +6,133 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #dddcd6;
-    color: #333;
+    background-color: #d4c553;
+    color: #160505;
     line-height: 1.6;
-    
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
 .header {
     text-align: center;
-    text-emphasis-color: #c90808;
-    text-transform: uppercase;
-    padding: 60px 20px;
+    padding: 50px 20px;
     background-color: #692020; 
     color: #ffffff;
     border-bottom: 8px solid #99c6e4;
 }
 
-.header h1 {
-    font-size: 4.5rem;
-    margin-bottom: 10px;
-    background: linear-gradient(to top, #692020);
-}
-
-.header h2{
-
-    text-align: center;
-    font-size: 4.5rem;
-    text-transform: uppercase;
-    padding: 60px 20px;
-    background-color: #692020; 
-    color: #b41b1b;
-    border-bottom: 8px solid #99c6e4;
-}
-
-
 .container {
     max-width: 1200px;
-    margin:  auto;
+    margin: auto;
     padding: 40px 20px;
 }
 
 .intro-text {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
-
+/* Gallery & Cards */
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px; 
+    gap: 30px;
 }
-
 
 .card {
     background: white;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
+    max-width: 350px;
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-10px); 
+    transform: translateY(-5px);
 }
 
-.gallery img {
+.card img {
     width: 100%;
-    max-width: 320px;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 10px;
 }
 
-.card p {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #692020;
-}
-
-.patato {
-    text-align: center;
+.card-content {
     padding: 20px;
-    background: #333;
+    text-align: center;
+}
+
+/* --- หัวใจของระบบ เปิด-ปิด (Checkbox Hack) --- */
+
+/* 1. ซ่อน Checkbox ไม่ให้เห็น */
+.toggle-input {
+    display: none;
+}
+
+/* 2. ซ่อนกล่องรายละเอียดไว้ก่อน */
+.detail-box {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s;
+    opacity: 0;
+    text-align: left;
+}
+
+/* 3. เมื่อ Checkbox ถูกติ๊ก (Checked) ให้ขยายเนื้อหาออกมา */
+.toggle-input:checked ~ .detail-box {
+    max-height: 500px; /* ปรับค่าให้ครอบคลุมเนื้อหา */
+    opacity: 1;
+    margin-top: 15px;
+}
+
+/* 4. เมื่อเปิดแล้ว ให้ซ่อนปุ่ม "อ่านรายละเอียด" อันแรก */
+.toggle-input:checked ~ label[class="btn"] {
+    display: none;
+}
+
+/* ตกแต่งเนื้อหาข้างใน */
+.report-box {
+    background: #f9f9f9;
+    padding: 15px;
+    border-left: 5px solid #692020;
+    border-radius: 5px;
+}
+
+.report-box h4 {
+    color: #692020;
+    margin-bottom: 5px;
+}
+
+/* ปุ่มกด */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #692020;
     color: white;
-    margin-top: 500px;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #a20f0f;
+}
+
+.close-btn {
+    background-color: #333;
+    font-size: 0.8rem;
+    margin-top: 15px;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: #692020;
+    color: white;
+    margin-top: 50px;
 }
