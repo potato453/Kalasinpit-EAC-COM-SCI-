@@ -1,0 +1,176 @@
+/* การตั้งค่าพื้นฐาน */
+* {
+    box-sizing: border-box ! important;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #384eaf ! important;
+
+    color: #250505;
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0%;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #1f0b69; 
+    color: #ffffff;
+    border-bottom: 8px solid #99c6e4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* ส่วนของ Report Container */
+.report-container {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 20px auto 40px;
+    box-shadow: 5px 5px 0px #0c0243;
+    overflow: hidden;
+    text-align: left;
+}
+
+.report-header {
+    background-color: #1a53a2;
+    color: white;
+    padding: 15px 25px;
+    border-bottom: 3px solid #cfba52;
+}
+
+.report-body {
+    padding: 25px;
+}
+
+
+.report-body p{
+  
+    word-spacing: 5px;
+}
+
+
+
+.report-body hr {
+    margin: 15px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.highlight-box {
+    background-color: #fcf8e3;
+    border-left: 5px solid #1609a9;
+    padding: 15px;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Gallery & Cards */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
+    max-width: 350px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* ระบบ Checkbox Hack สำหรับเปิด-ปิด */
+.toggle-input {
+    display: none;
+}
+
+.detail-box {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s;
+    opacity: 0;
+}
+
+.toggle-input:checked ~ .detail-box {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.toggle-input:checked ~ label.btn:not(.close-btn) {
+    display: none;
+}
+
+/* ตกแต่งเนื้อหาข้างใน Card */
+.report-box-inner {
+    background: #f9f9f9;
+    padding: 15px;
+    border-left: 5px solid #692020;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.report-box-inner h4 {
+    color: #692020;
+    margin-bottom: 5px;
+}
+
+/* ปุ่มกด */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #095ee7;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #000000;
+}
+
+.close-btn {
+    background-color: #1b1919;
+    font-size: 0.8rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: #000102;
+    color: white;
+    margin-top: 50px;
+}
